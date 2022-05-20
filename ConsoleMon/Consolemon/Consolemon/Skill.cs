@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Consolemon
+namespace ConsolemonGame
 {
     internal class Skill
     {
@@ -17,6 +17,22 @@ namespace Consolemon
             name = "firebreath";
             damage = 50;
             energyCost = 3;
+
         }
+
+            internal void UseOn(Consolemon target, Consolemon caster)
+            {
+                caster.DepleteEnergy(energyCost);
+                target.TakeDamage(damage);
+
+            }
+        internal Skill(int damage, string name, int energyCost)
+        {
+            this.damage = damage;
+            this.name = name;
+            this.energyCost = energyCost;
+        }
+
+
     }
 }
